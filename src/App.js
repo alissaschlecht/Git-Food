@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.scss';
-// import Button from './components/Button';
+
 import Wrapper from './components/Wrapper';
 import Header from './components/Header';
-
-
-import Text from './components/Text/Text';
+import Footer from './components/Footer';
+import Dishes from './pages/Dishes';
 
 function App() {
   return (
@@ -13,12 +12,9 @@ function App() {
       
       <Header />
       <Wrapper>
-        <Text.Heading level={5} color="lightGrey">
-					Firstname's Dishes
-				</Text.Heading>
-
-
+        <Dishes/>
       </Wrapper>
+      <Footer />
 
     </div>
   );

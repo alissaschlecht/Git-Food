@@ -6,3 +6,8 @@
     max-width: $grid-width-max;
     padding: $spacing-regular;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+}

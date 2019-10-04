@@ -1,0 +1,11 @@
+@import '../../styles/utils.scss';
+
+.footer {
+    text-align: center;
+    padding: $spacing-regular;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background: $black;
+    color: $white;
+}
