@@ -1,0 +1,136 @@
+@import '../../styles/utils.scss';
+
+// .light {
+//   @include light-weight;
+// }
+
+// .regular {
+//   @include regular-weight;
+// }
+
+// .semi-bold {
+//   @include semi-bold-weight;
+// }
+
+// .bold {
+//   @include bold-weight;
+// }
+
+// .body-tiny {
+//   font-size: $font-size-mobile-tiny-body;
+//   font-weight: $font-weight-regular;
+//   font-family: $font-family;
+//   line-height: $line-height;
+
+//   @include mq($from: tablet) {
+//     font-size: $font-size-desktop-tiny-body;
+//   }
+// }
+
+// .body-small {
+//   font-size: $font-size-mobile-small-body;
+//   font-weight: $font-weight-regular;
+//   font-family: $font-family;
+//   line-height: $line-height;
+
+//   @include mq($from: tablet) {
+//     font-size: $font-size-desktop-small-body;
+//   }
+// }
+
+// .body-regular {
+//   font-size: $font-size-mobile-regular-body;
+//   font-weight: $font-weight-regular;
+//   font-family: $font-family;
+//   line-height: $line-height;
+
+//   @include mq($from: tablet) {
+//     font-size: $font-size-desktop-regular-body;
+//   }
+// }
+
+// .body-large {
+//   font-size: $font-size-mobile-large-body;
+//   font-weight: $font-weight-regular;
+//   font-family: $font-family;
+//   line-height: $line-height;
+
+//   @include mq($from: tablet) {
+//     font-size: $font-size-desktop-large-body;
+//   }
+// }
+
+// .heading-1 {
+//   font-size: $font-size-mobile-h1;
+//   font-weight: $font-weight-bold;
+//   font-family: $font-family;
+//   line-height: $line-height;
+
+//   @include mq($from: tablet) {
+//     font-size: $font-size-desktop-h1;
+//   }
+// }
+
+// .heading-2 {
+//   font-size: $font-size-mobile-h2;
+//   font-weight: $font-weight-bold;
+//   font-family: $font-family;
+//   line-height: $line-height;
+
+//   @include mq($from: tablet) {
+//     font-size: $font-size-desktop-h2;
+//   }
+// }
+
+// .heading-3 {
+//   font-size: $font-size-mobile-h3;
+//   font-weight: $font-weight-bold;
+//   font-family: $font-family;
+//   line-height: $line-height;
+
+//   @include mq($from: tablet) {
+//     font-size: $font-size-desktop-h3;
+//   }
+// }
+
+// .heading-4 {
+//   font-size: $font-size-mobile-h4;
+//   font-weight: $font-weight-bold;
+//   font-family: $font-family;
+//   line-height: $line-height;
+
+//   @include mq($from: tablet) {
+//     font-size: $font-size-desktop-h4;
+//   }
+// }
+
+// .heading-5 {
+//   font-size: $font-size-mobile-h5;
+//   font-weight: $font-weight-bold;
+//   font-family: $font-family;
+//   line-height: $line-height;
+
+//   @include mq($from: tablet) {
+//     font-size: $font-size-desktop-h5;
+//   }
+// }
+
+// .white {
+//   color: $white;
+// }
+
+// .black {
+//   color: $black;
+// }
+
+// .lightGrey {
+//   color: $lightGrey;
+// }
+
+// .mediumGrey {
+//   color: $mediumGrey;
+// }
+
+// .darkestGrey {
+//   color: $darkestGrey;
+// }

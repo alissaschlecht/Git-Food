@@ -1,0 +1,21 @@
+@import '../../styles/utils.scss';
+
+.button {
+	text-decoration: none;
+	padding: 12px 16px;
+	font-size: 18px;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.075rem;
+	line-height: 100%;
+	transition: all 0.23s ease-in-out;
+	border: none;
+	border-radius: 2px;
+	display: block;
+	color: white;
+	background-color: #B81A0A;
+	white-space: normal;
+	&:hover{
+		background-color: #A01808;
+	}
+}

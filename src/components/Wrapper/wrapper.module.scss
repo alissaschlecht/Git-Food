@@ -1,0 +1,8 @@
+@import '../../styles/utils.scss';
+
+.wrapper {
+    margin: 0 auto;
+    width: calc(100% - ($spacing-regular * 2));
+    max-width: $grid-width-max;
+    padding: $spacing-regular;
+}

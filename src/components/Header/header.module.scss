@@ -1,0 +1,8 @@
+@import '../../styles/utils.scss';
+
+.header {
+  border-bottom: 1px solid $grey;
+  padding: $spacing-regular;
+  display: flex;
+  justify-content: space-between;
+}
