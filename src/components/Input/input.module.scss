@@ -1,0 +1,244 @@
+@import '../../styles/utils.scss';
+
+.input {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  margin-bottom: $spacing-x-small
+
+  input {
+    height: 43px;
+    width: 100%;
+    display: block;
+    font-size: 1rem;
+    line-height: $line-height;
+    color: $darkest-grey;
+    border: 1px solid $light-grey;
+    outline: none;
+    border-radius: $border-radius;
+    padding: $spacing-x-small * 2;
+    transition: $animation-type-easyinout $animation-time-default;
+  }
+    &:focus {
+      color: $black;
+      border: 1px solid $grey;
+    }
+
+    &.error {
+      color: $red;
+      border: 1px solid $dark-red;
+    }
+
+    &:disabled {
+      background: $light-grey;
+    }
+
+}
+
+.black {
+  color: $black;
+}
+
+.white {
+  color: $white;
+}
+
+.label {
+  width: 100%;
+  display: block;
+  font-size: 1rem;
+  line-height: $line-height;
+  margin-bottom: $spacing-x-small;
+}
+
+.error-message {
+  color: $red;
+  font-size: $font-size-desktop-tiny-body;
+  line-height: $line-height;
+  margin-top: $spacing-x-small;
+}
+
+.checkbox {
+  margin-bottom: $spacing-x-small
+
+  img {
+    width: 24px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+  .image {
+    width: 16px;
+    height: 16px;
+  }
+
+  .label {
+    display: inline;
+    margin-left: $spacing-x-small;
+    vertical-align: middle;
+  }
+
+}
+
+.password, .copy-input {
+  span {
+    cursor: pointer;
+    height: 43px;
+    vertical-align: top;
+    background-color: $white;
+    display: inline-block;
+    width: calc(20%);
+    border: 1px solid $light-grey;
+    border-left: none;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+      padding: 14px $spacing-x-small * 2;
+    transition: $animation-type-easyinout $animation-time-default;
+    font-size: $font-size-desktop-tiny-body;
+    color: $black;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  input {
+    display: inline-block;
+    border-right: none;
+    width: calc(80%);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &:focus {
+      border-right: none;
+    }
+
+    &.error {
+      border-right: none;
+    }
+
+    &:focus + span {
+      border: 1px solid $grey;
+      border-left: none;
+    }
+
+    &.error + span {
+      border: 1px solid $dark-red;
+      border-left: none;
+    }
+  }
+}
+
+.copy-input {
+  img {
+    border-left: 1px solid $light-grey;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  span {
+    padding: 0;
+  }
+}
+
+.date-input {
+  width: 100%;
+
+  & :global .react-datepicker-wrapper, :global .react-datepicker__input-container {
+    width: 100%;
+  }
+}
+
+.select {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  margin-bottom: $spacing-x-small
+
+  &:focus {
+    outline: none;
+  }
+
+  .wrapper {
+    user-select: none;
+    position: relative;
+    width: 100%;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 43px;
+      border: 1px solid $light-grey;
+      border-radius: $border-radius;
+      cursor: default;
+      position: relative;
+      background-color: $white;
+
+      &.error {
+        color: $red;
+        border: 1px solid $dark-red;
+      }
+
+      .header-title {
+        font-weight: 300;
+        font-size: 1rem;
+        margin: 2px 20px;
+        margin-right: 30px;
+      }
+
+      .chevron {
+        margin-right: 20px;
+      }
+    }
+
+    .list {
+      z-index: 10;
+      position: absolute;
+      width: 100%;
+      border: calc(#{$border-width} - 2px) solid $light-grey;
+      border-top: none;
+      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      background-color: $white;
+      box-shadow: 0 2px 5px -1px $darkest-grey;
+      font-weight: 700;
+      padding: 15px 0;
+      max-height: 215px;
+      overflow-y: scroll;
+    }
+  }
+}
+
+.option {
+  width: 100%;
+  font-size: $font-size-mobile-tiny-body;
+  font-weight: $font-weight-regular;
+  padding: 8px 10px;
+  line-height: $line-height;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:hover {
+    color: $white;
+    background-color: $grey;
+  }
+}
+
+.chevron-up {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid $black;
+}
+
+.chevron-down {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid $black;
+}

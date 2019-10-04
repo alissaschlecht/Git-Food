@@ -1,0 +1,108 @@
+@import '../../styles/utils.scss';
+
+.image {
+  height: 30px;
+  width: 30px;
+  min-height: 30px;
+  min-width: 30px;
+  display: inline-block;
+  margin-right: $mobile-tiny-space * 2;
+}
+
+.default-image {
+  line-height: 1;
+  text-align: center;
+  min-width: 30px;
+  min-height: 30px;
+  background-color: $lightestGrey;
+  border: 1px solid $lightGrey;
+  color: $darkestGrey;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 28px;
+  display: inline-block;
+  margin: auto;
+}
+
+.container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin-bottom: $mobile-small-space;
+}
+
+.input {
+  height: 43px;
+  width: 100%;
+  display: block;
+  font-size: $font-size-mobile-small-body;
+  line-height: $line-height;
+  color: $darkestGrey;
+  border: 1px solid $lightGrey;
+  outline: none;
+  border-radius: $border-radius;
+  padding: $mobile-tiny-space * 2;
+  transition: $animation-type-easyinout $animation-time-default;
+
+  &:focus {
+    color: $black;
+    border: 1px solid $darkGrey;
+  }
+
+  &.error {
+    color: $red;
+    border: 1px solid $darkRed;
+  }
+
+  &:disabled {
+    background: $lightestGrey;
+  }
+}
+
+.suggestionsContainerOpen {
+  position: absolute;
+  display: block;
+  margin-bottom: $mobile-small-space;
+  width: 100%;
+  vertical-align: top;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.suggestionsList {
+  z-index: 10;
+  position: absolute;
+  list-style-type: none;
+  width: 100%;
+  border: calc(#{$border-width} - 2px) solid $lightGrey;
+  border-top: none;
+  border-bottom-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  background-color: $white;
+  -webkit-box-shadow: 0 2px 5px -1px $darkestGrey;
+          box-shadow: 0 2px 5px -1px $darkestGrey;
+  font-weight: 700;
+  padding: 15px 0;
+  max-height: 215px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.suggestion {
+  font-size: $font-size-mobile-small-body;
+  padding: 8px 10px;
+  line-height: $line-height;
+  cursor: default;
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.suggestionHighlighted {
+  color: $white;
+  background-color: $darkGrey;
+  width: 100%;
+}
