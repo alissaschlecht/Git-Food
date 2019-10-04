@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.scss';
 
 import Wrapper from './components/Wrapper';
@@ -19,14 +19,14 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/dishes">
-            <Dishes />
-          </Route>
           <Route path="/dishForm">
             <DishForm />
           </Route>
           <Route path="/dish">
             <Dish />
+          </Route>
+          <Route path="/">
+            <Dishes />
           </Route>
         </Switch>
         <Footer />
