@@ -19,7 +19,10 @@ const Dishes = () => {
 				<Button text="Add a dish"/>
 			</div>
 			<div className={styles['empty-dishes']}>
-				<Text.Body size="large">Looks Like it's empty!</Text.Body>
+				<Text.Body 
+					size="large">
+					Looks Like it's empty!
+				</Text.Body>
 				<Image src={logoImage} alt="Git Food Logo" />
 				<Link to="/dishForm" className={styles.button}>Add your first dish</Link>
 				<Link to="/dish" className={styles.button}>View this dish</Link>
