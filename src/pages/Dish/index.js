@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './dish.module.scss';
 
 import Text from '../../components/Text/Text';
-import Wrapper from '../../components/Wrapper';
-import Button from '../../components/Button/Button';
 
 import { Link } from "react-router-dom";
 
