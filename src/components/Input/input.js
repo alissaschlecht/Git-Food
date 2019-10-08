@@ -4,7 +4,7 @@ import Label from './components/label.js';
 import DefaultInput from './components/default-input.js';
 import PasswordInput from './components/password-input.js';
 import InputError from './components/input-error.js';
-// import inputErrors from '../../utils/input-errors.js';
+import inputErrors from '../../utils/input-errors.js';
 import styles from './input.module.scss';
 import { getCurrentError } from './helpers.js';
 
@@ -13,9 +13,9 @@ class Input extends Component {
     super(props);
 
     this.state = {
-      // errors: props.isRequired
-      //   ? [inputErrors.required].concat(props.extraErrors)
-      //   : props.extraErrors,
+      errors: props.isRequired
+        ? [inputErrors.required].concat(props.extraErrors)
+        : props.extraErrors,
       currentError: false,
       hasBlurred: false,
       isVirgin: true

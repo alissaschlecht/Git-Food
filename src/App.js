@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.scss';
 
-import Wrapper from './components/Wrapper';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Dishes from './pages/Dishes';
