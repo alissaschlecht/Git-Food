@@ -2,15 +2,41 @@
 
 
 .dashboard-heading {
+	max-width: 800px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    margin: 0 auto;
 }
 .empty-dishes {
     text-align: center;
     padding: $spacing-large;
+}
+.dish-list {
+	max-width: 800px;
+	margin: 0 auto;
+	margin-bottom: $spacing-xx-large;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid $light-grey;
+	border-radius: $border-radius;
+	padding: $spacing-regular;
+	.dish-row {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		border-bottom:1px solid $light-grey;
+		padding-top: $spacing-small;
+		padding-bottom: $spacing-small;
+		.button-container {
+			display: flex;
+			.button {
+				margin-right: $spacing-small;
+			}
+		}
+	}
 }
 .button {
     margin: 0 auto;

@@ -29,16 +29,16 @@ class EditDish extends Component {
       .then(json => this.setState({dishes: [json.dish]}));
   }
 
-  addDish = async () => {
-    try {
-      const response = await axios.post('https://git-food-api.herokuapp.com/api/dishes', {
-        name: this.state.name
-      });
-      this.setState({ dishes: this.state.dishes.concat([response.data.dish]) })
-    } catch(error) {
-      console.log(error)
-    }
-  }
+  // addDish = async () => {
+  //   try {
+  //     const response = await axios.post('https://git-food-api.herokuapp.com/api/dishes', {
+  //       name: this.state.name
+  //     });
+  //     this.setState({ dishes: this.state.dishes.concat([response.data.dish]) })
+  //   } catch(error) {
+  //     console.log(error)
+  //   }
+  // }
 
   updateDish = async () => {
     axios.put('https://git-food-api.herokuapp.com/api/dishes/5', {
@@ -55,7 +55,6 @@ class EditDish extends Component {
   deleteDish = async () => {
     axios.delete('https://git-food-api.herokuapp.com/api/dishes/4')
     .then(function (response) {
-      console.log(response);
     })
     .catch(function (error) {
       console.log(error);
@@ -64,23 +63,23 @@ class EditDish extends Component {
 
 
   render(){
+    console.log(this.state)
+
+    const dishName = this.state['dishes'][0] ? this.state['dishes'][0].name : '';
+    
     return (
       <Wrapper>
         <Link to="/" >View all dishes</Link>
-        <p>All Dishes:</p>
-        <ul>
-          {this.state.dishes.map((dish, key) => (
-            <li key={dish.id}>{dish.name}</li>
-          ))}
-        </ul>
         <Text.Heading 
           level={2} 
-          color="lightGrey">
-          Add new dish
+          color="lightGrey"
+        >
+          { dishName }
         </Text.Heading>
+
         <Input
           id="dishName" 
-          label="Add Dish name"
+          label="Update id=5 Dish name"
           value={this.state.name}
           onInputChange={(value, error) => {
             this.updateField('Dishname', value, error);
@@ -88,7 +87,7 @@ class EditDish extends Component {
         />
         <Button 
           text="Save my dishname"
-          onClick={ this.addDish} 
+          onClick={ this.updateDish} 
         />
  <br/>
  <br/>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './dishForm.module.scss';
+import styles from './addDish.module.scss';
 import { Link } from "react-router-dom";
 import Input from '../../components/Input/input';
 import Text from '../../components/Text/Text';
@@ -8,25 +8,39 @@ import Button from '../../components/Button/Button';
 
 const axios = require('axios');
 
-class DishForm extends Component {
+class AddDish extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       name: '',
+      ingredient: '',
+      instruction: '',
       dishes: []
     } 
-    this.updateField = this.updateField.bind(this);
+    this.updateNameField = this.updateNameField.bind(this);
+    this.updateIngredientField = this.updateIngredientField.bind(this);
+    this.updateInstructionField = this.updateInstructionField.bind(this);
   }
 
-  updateField = (field, value, error) => {
+  updateNameField = (field, value, error) => {
     this.setState({ name: value });
+  }
+
+  updateIngredientField = (field, value, error) => {
+    this.setState({ ingredient: value });
+  }
+  updateInstructionField = (field, value, error) => {
+    this.setState({ instruction: value });
   }
 
   componentDidMount() {
     fetch('https://git-food-api.herokuapp.com/api/dishes')
       .then(response => response.json())
       .then(json => this.setState({dishes: json.dishes}));
+
+    axios.get('https://git-food-api.herokuapp.com/api/dishes/5')
+    .then(response => console.log(response));
   }
 
   addDish = async () => {
@@ -67,12 +81,6 @@ class DishForm extends Component {
     return (
       <Wrapper>
         <Link to="/" className={styles.button}>View all dishes</Link>
-        <p>All Dishes:</p>
-        <ul>
-          {this.state.dishes.map((dish, key) => (
-            <li key={dish.id}>{dish.name}</li>
-          ))}
-        </ul>
         <Text.Heading 
           level={2} 
           color="lightGrey">
@@ -83,27 +91,40 @@ class DishForm extends Component {
           label="Add Dish name"
           value={this.state.name}
           onInputChange={(value, error) => {
-            this.updateField('Dishname', value, error);
+            this.updateNameField('Dishname', value, error);
           }}
         />
+<br/>
+<hr/>
+<br/>
+        <Input
+          id="ingredientName" 
+          label="Add ingredient name"
+          value={this.state.ingredient}
+          onInputChange={(value, error) => {
+            this.updateIngredientField('Ingredientname', value, error);
+          }}
+        />
+<br/>
+<hr/>
+<br/>
+        <Input
+          id="instruction" 
+          label="Add instruction"
+          value={this.state.instruction}
+          onInputChange={(value, error) => {
+            this.updateInstructionField('Instruction', value, error);
+          }}
+        />
+
         <Button 
           text="Save my dishname"
           onClick={ this.addDish} 
         />
- <br/>
- <br/>
-        <Input
-          id="dishName" 
-          label="Update id=5 Dish name"
-          value={this.state.name}
-          onInputChange={(value, error) => {
-            this.updateField('Dishname', value, error);
-          }}
-        />
-          <Button 
+{/*          <Button 
           text="Update my dishname"
           onClick={ this.updateDish} 
-        />
+        />*/}
   <br/>
   <br/>
       <Button 
@@ -117,4 +138,4 @@ class DishForm extends Component {
 
 
 
-export default DishForm;
+export default AddDish;

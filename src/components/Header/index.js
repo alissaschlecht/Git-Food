@@ -10,11 +10,7 @@ const Header = () => {
 		<div>
 			<nav className={styles.header}>
 				<p>GitFood</p>
-				<Text.Heading level={5} color="lightGrey">
-					Hello I'm a heading
-				</Text.Heading>
 				<Button text="Log Out" />
-				
 			</nav>
 		</div>	
 	)
