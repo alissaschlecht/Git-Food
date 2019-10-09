@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import styles from './dishForm.module.scss';
 import { Link } from "react-router-dom";
 import Input from '../../components/Input/input';
 import Text from '../../components/Text/Text';
 import Wrapper from '../../components/Wrapper';
 import Button from '../../components/Button/Button';
-
 const axios = require('axios');
 
-class DishForm extends Component {
+class EditDish extends Component {
 
   constructor(props) {
     super(props);
@@ -24,9 +22,11 @@ class DishForm extends Component {
   }
 
   componentDidMount() {
-    fetch('https://git-food-api.herokuapp.com/api/dishes')
+    console.log(this.props)
+    const dishId = this.props.match.params.id;
+    fetch('https://git-food-api.herokuapp.com/api/dishes/'+dishId)
       .then(response => response.json())
-      .then(json => this.setState({dishes: json.dishes}));
+      .then(json => this.setState({dishes: [json.dish]}));
   }
 
   addDish = async () => {
@@ -66,7 +66,7 @@ class DishForm extends Component {
   render(){
     return (
       <Wrapper>
-        <Link to="/" className={styles.button}>View all dishes</Link>
+        <Link to="/" >View all dishes</Link>
         <p>All Dishes:</p>
         <ul>
           {this.state.dishes.map((dish, key) => (
@@ -117,4 +117,4 @@ class DishForm extends Component {
 
 
 
-export default DishForm;
+export default EditDish;

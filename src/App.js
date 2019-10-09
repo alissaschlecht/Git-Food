@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Dishes from './pages/Dishes';
 import DishForm from './pages/DishForm';
 import Dish from './pages/Dish';
+import EditDish from './pages/EditDish';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/dishForm">
             <DishForm />
           </Route>
+          <Route path="/dish/:id" component={EditDish} />
           <Route path="/dish">
             <Dish />
           </Route>
