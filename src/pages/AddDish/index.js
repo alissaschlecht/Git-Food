@@ -14,6 +14,7 @@ class AddDish extends Component {
     super(props);
     this.state = {
       name: '',
+      dishId: 1,
       ingredient: '',
       instruction: '',
       dishes: []
@@ -34,24 +35,43 @@ class AddDish extends Component {
     this.setState({ instruction: value });
   }
 
-  componentDidMount() {
-    fetch('https://git-food-api.herokuapp.com/api/dishes')
-      .then(response => response.json())
-      .then(json => this.setState({dishes: json.dishes}));
-
-    axios.get('https://git-food-api.herokuapp.com/api/dishes/5')
-    .then(response => console.log(response));
-  }
-
-  addDish = async () => {
-    try {
-      const response = await axios.post('https://git-food-api.herokuapp.com/api/dishes', {
+  addDish = () => {
+    axios.post('https://git-food-api.herokuapp.com/api/dishes', {
         name: this.state.name
-      });
+    })
+    .then((response) => {
+      this.setState({ dishId: response.data.dish.id });
       this.setState({ dishes: this.state.dishes.concat([response.data.dish]) })
-    } catch(error) {
-      console.log(error)
-    }
+    })
+    .then((response) => {
+      axios.post('https://git-food-api.herokuapp.com/api/versions', {
+        'version': {
+          'dishId': this.state.dishId,
+          'notes': '',
+          'versionNumber': 1
+        }
+      })
+    })
+    .then((response) => {
+      axios.post('https://git-food-api.herokuapp.com/api/ingredients', {
+        'ingredient': {
+          'versionID': 1,
+          'name': 'tomato',
+          'quantity': '3',
+          'measurement': 'kilo'
+        }
+      });
+      axios.post('https://git-food-api.herokuapp.com/api/instructions', {
+        'instruction': {
+          'versionID': 1,
+          'stepNumber': 1,
+          'description': 'do this'
+        }
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   updateDish = async () => {
@@ -59,25 +79,25 @@ class AddDish extends Component {
       name: this.state.name
     })
     .then(function (response) {
-      console.log(response);
+      
     })
     .catch(function (error) {
-      console.log(error);
+      
     });
   }
 
   deleteDish = async () => {
     axios.delete('https://git-food-api.herokuapp.com/api/dishes/4')
     .then(function (response) {
-      console.log(response);
+      
     })
     .catch(function (error) {
-      console.log(error);
+      
     });
   }
 
-
   render(){
+    console.log('this.state', this.state);
     return (
       <Wrapper>
         <Link to="/" className={styles.button}>View all dishes</Link>
@@ -119,7 +139,7 @@ class AddDish extends Component {
 
         <Button 
           text="Save my dishname"
-          onClick={ this.addDish} 
+          onClick={ this.addDish } 
         />
 {/*          <Button 
           text="Update my dishname"
